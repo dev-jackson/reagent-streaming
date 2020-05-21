@@ -15,4 +15,4 @@ io.on("connection",(userSocket)=>{
     });
 });
 
-http.listen(process.env.PORT);
+http.listen(process.env.PORT || 8000);
