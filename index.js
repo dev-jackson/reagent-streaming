@@ -1,6 +1,7 @@
 const app = require('express')();
 const http = require('http').createServer(app);
 
+var port = Number(process.env.PORT || 3000);
 app.get('/',(req,res)=>{
     res.end("Server running Yay!!");
 });
@@ -15,6 +16,6 @@ io.on("connection",(userSocket)=>{
     });
 });
 
-http.listen((process.env.PORT || 3000),()=>{
+http.listen(port,()=>{
     console.log(http.address());
 });
